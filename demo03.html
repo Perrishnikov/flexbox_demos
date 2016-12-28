@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main03.css" media="screen">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="app-wrap box1">
+        <div class="generic-flex-column">
+            <div class="head-wrap box2">
+                <div class="app-title">This is App Title</div>
+                <a class="slideButton"><i class="material-icons">settings</i></a>
+            </div>
+            <div class="generic-flex-column box2">
+                <div class="">
+                    <i id="swap_vertical_circle" class="material-icons">swap_vertical_circle</i>
+                    <ul id="menuID" class="stretch-menu">
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="body-wrap box3">
+
+            <div class="sidebar box5">
+                <div class="sett-title">Settings</div>
+                <ul class="sett-options">
+                    <li>An Item</li>
+                    <li>A Second Item With Long Name</li>
+                </ul>
+            </div>
+
+            <div class="content box6"></div>
+        </div>
+
+        <!-- <div class="foot-wrap box4"></div> -->
+    </div>
+
+    <script>
+        // toggle the settings menu
+        document.querySelector('.slideButton').addEventListener('click', function() {
+            const content = document.querySelector('.content').classList;
+            if (content.value.includes('revealRight')) {
+                content.remove('revealRight');
+            } else {
+                content.add('revealRight');
+            }
+        });
+        document.querySelector('#swap_vertical_circle').addEventListener('click', function() {
+            const menu = document.querySelector('#menuID').classList;
+            if (menu.value.includes('stretch-open')) {
+                menu.remove('stretch-open');
+            } else {
+                menu.add('stretch-open');
+            }
+        });
+        document.querySelector('.content').textContent =
+            `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis sem nulla. Donec id massa finibus, rutrum ligula eget, convallis ligula. Sed eu efficitur nulla. Pellentesque sed nulla erat. Vestibulum aliquet fringilla purus, et cursus lectus molestie eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum rutrum commodo ullamcorper. Duis interdum vel ipsum vehicula interdum. Donec rutrum venenatis nulla nec consectetur. Aliquam sit amet ante sed arcu dapibus rutrum. Vestibulum odio urna, congue maximus scelerisque ac, finibus tristique ipsum. In lobortis velit nec lobortis dictum. Pellentesque sed semper dolor. Nam accumsan tortor ut maximus molestie. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum rutrum commodo ullamcorper. Duis interdum vel ipsum vehicula interdum. Donec rutrum venenatis nulla nec consectetur. Aliquam sit amet ante sed arcu dapibus rutrum. Vestibulum odio urna, congue maximus scelerisque ac, finibus tristique ipsum. In lobortis velit nec lobortis dictum. Pellentesque sed semper dolor.`
+            // document.querySelector('.foot-wrap').textContent = `This is the footer. It is only visible if there is content`;
+    </script>
+</body>
+
+</html>

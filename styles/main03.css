@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    overflow: hidden; /*prevents bouncing*/
+}
+/**, *:before, *:after {
+  box-sizing: border-box;
+}*/
+.app-wrap { /*box1*/
+    /*this is the master flex container*/
+    height: 100vh; /*100vh allows y scrolling */
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+}
+.head-wrap { /*box2*/
+    /*this is also a flex item*/
+    display: flex; /*this is a flex container*/
+    flex: 0 0 auto; /*optional*/
+    justify-content: space-around; /*optional*/
+}
+.body-wrap { /*box3*/
+    /*this is also a flex item*/
+    display: flex; /*needed to scroll content*/
+    flex-direction: column;
+    overflow-y: scroll; /*required*/
+    overflow-x: hidden; /*prevent side scrolling*/
+}
+.sidebar { /*box5*/
+    /*this is also a flex item*/
+    position: absolute; /*required for positioning*/
+    width: 220px;
+}
+.content { /*box6*/
+    /*this is also a flex item*/
+    left: -220px;
+    transform: translate3d(0,0,0);
+    transition: transform .3s;
+}
+.revealRight {
+    transform: translate3d(220px,0,0);
+}
+
+.stretch-menu {
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    background: #d5d5d5;
+}
+.stretch-open {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+}
+.generic-flex-column{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.box1 { /*app-wrap*/
+    background: #800000;
+}
+.box2 { /*head-wrap*/
+    background: #ecf0f1;
+    /*padding: 4px;*/
+}
+.box3 { /*body-wrap*/
+    background: #95a5a6;
+}
+.box4 { /*foot-wrap*/
+    background: #ecf0f1;
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+    padding: 4px;
+}
+.box5 { /*sidebar*/
+    background: #f1c40f;
+    padding: 4px;
+}
+.box6 { /*content*/
+    background: #e67e22;
+    padding: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+}
+
+body{
+    font-size: 24px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    text-decoration: none;
+}
