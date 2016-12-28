@@ -24,7 +24,7 @@ body {
 }
 .sidebar { /*box5*/
     /*this is also a flex item*/
-    position: absolute;
+    position: absolute; /*required for positioning*/
     width: 220px;
 }
 .content { /*box6*/
@@ -33,10 +33,18 @@ body {
     transform: translate3d(0,0,0);
     transition: transform .3s;
 }
-.content.revealRight {
+.revealRight {
     transform: translate3d(220px,0,0);
 }
 .foot-wrap{ /*box4*/
+    /*this is also a flex item*/
+    position: absolute;
+    bottom: -60px;
+    transform: translate3d(0,0,0);
+    transition: transform .3s;
+}
+.slideUp {
+    transform: translate3d(0,-60px,0);
 }
 
 .box1 { /*app-wrap*/
@@ -51,6 +59,8 @@ body {
 }
 .box4 { /*foot-wrap*/
     background: #ecf0f1;
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+    padding: 4px;
 }
 .box5 { /*sidebar*/
     background: #f1c40f;
@@ -59,7 +69,7 @@ body {
 .box6 { /*content*/
     background: #e67e22;
     padding: 4px;
-    box-shadow: -4px 0 12px rgba(0,0,0,.6);
+    box-shadow: 0 0 8px rgba(0,0,0,1);
 }
 
 body{

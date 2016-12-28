@@ -4,7 +4,8 @@
 <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/main01.css" media="screen">
+    <link rel="stylesheet" href="styles/main02.css" media="screen">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Index</title>
 </head>
 
@@ -12,7 +13,8 @@
     <div class="app-wrap box1">
         <div class="head-wrap box2">
             <div class="app-title">This is App Title</div>
-            <a class="slideButton">&#9776;</a>
+            <a class="slideButton"><i class="material-icons">settings</i></a>
+            <i id="keyboard_arrow_up" class="material-icons">keyboard_arrow_up</i>
         </div>
 
         <div class="body-wrap box3">
@@ -26,14 +28,14 @@
             </div>
 
             <div class="content box6"></div>
+            <div class="foot-wrap box4"></div>
         </div>
 
-        <!-- <div class="foot-wrap box4"></div> -->
     </div>
 
     <script>
         // toggle the settings menu
-        document.querySelector('.slideButton').addEventListener('click', function() {
+        document.querySelector('.slideButton').addEventListener('click', () => {
             const content = document.querySelector('.content').classList;
             if (content.value.includes('revealRight')) {
                 content.remove('revealRight');
@@ -41,9 +43,18 @@
                 content.add('revealRight');
             }
         });
+        // toggle sticky footer
+        document.querySelector('#keyboard_arrow_up').addEventListener('click', () => {
+            const foot = document.querySelector('.foot-wrap').classList;
+            if (foot.value.includes('slideUp')) {
+                foot.remove('slideUp');
+            } else {
+                foot.add('slideUp');
+            }
+        });
         document.querySelector('.content').textContent =
             `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis sem nulla. Donec id massa finibus, rutrum ligula eget, convallis ligula. Sed eu efficitur nulla. Pellentesque sed nulla erat. Vestibulum aliquet fringilla purus, et cursus lectus molestie eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum rutrum commodo ullamcorper. Duis interdum vel ipsum vehicula interdum. Donec rutrum venenatis nulla nec consectetur. Aliquam sit amet ante sed arcu dapibus rutrum. Vestibulum odio urna, congue maximus scelerisque ac, finibus tristique ipsum. In lobortis velit nec lobortis dictum. Pellentesque sed semper dolor. Nam accumsan tortor ut maximus molestie. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum rutrum commodo ullamcorper. Duis interdum vel ipsum vehicula interdum. Donec rutrum venenatis nulla nec consectetur. Aliquam sit amet ante sed arcu dapibus rutrum. Vestibulum odio urna, congue maximus scelerisque ac, finibus tristique ipsum. In lobortis velit nec lobortis dictum. Pellentesque sed semper dolor.`
-            // document.querySelector('.foot-wrap').textContent = `This is the footer. It is only visible if there is content`;
+        document.querySelector('.foot-wrap').textContent = `This is the footer. It is only visible if there is content.`;
     </script>
 </body>
 
