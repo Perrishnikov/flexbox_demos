@@ -44,16 +44,16 @@ body {
     max-height: 0;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
-    background: #d5d5d5;
+    width: 100px;
 }
 .stretch-open {
-    max-height: 500px;
+    max-height: 100vh;
     transition: max-height 0.25s ease-in;
 }
 .generic-flex-column{
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto;
+    flex: 1 0 auto; /*grow as needed, do not shrink,*/
 }
 
 .box1 { /*app-wrap*/
